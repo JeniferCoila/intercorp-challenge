@@ -12,8 +12,11 @@ export class FormComponent implements OnInit {
   lastName: string;
   age: number; 
   birthDate: any;
-  
+
   ngOnInit() {
   }
 
+  sendData(){
+    
+  }
 }
