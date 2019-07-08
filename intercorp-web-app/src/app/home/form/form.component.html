@@ -1,46 +1,22 @@
-<div class="container ancho">
-    <div >
-      <div class="form-group row">
-        <div>
-          <label for="inputName" class="ancho-label col-form-label">Nombre: </label>
-        </div>
-          <div class="col-sm-9">
-            <input type="text" class="form-control" id="inputName" name="namez" [(ngModel)]="name" required>
-          </div>
-        </div>
 
-        <div class="form-group row">
-            <div>
-                <label for="inputLastName" class="ancho-label col-form-label">Apellido:</label>
-              </div>
-            <div class="col-sm-9">
-              <input type="text" class="form-control" id="inputLastName"  name="lastName" [(ngModel)]="lastName" required>
-            </div>
-          </div>
+<div class="d-flex flex-column align-items-center">
+  <div class="d-flex flex-row">
+    <div class="d-flex flex-column justify-content-around interspace">
+      <label for="inputName" class="col-form-label">Nombre: </label>
+      <label for="inputLastName" class="col-form-label">Apellido:</label>
+      <label for="inputAge" class="col-form-label">Edad:</label>
+      <label for="birthDate" class="col-form-label">Fecha de Nacimiento:</label>
+    </div>
+    <div class="d-flex flex-column justify-content-around interspace">
+      <input type="text" class="form-control" id="inputName" name="name" [(ngModel)]="name" required>
+      <input type="text" class="form-control" id="inputLastName" name="lastName" [(ngModel)]="lastName" required>
+      <input type="number" class="form-control" id="inputAge" name="age" [(ngModel)]="age" required>
+      <input type="date" class="form-control" id="birthDate" name="birthDate" [(ngModel)]="birthDate" required>
 
-          <div class="form-group row">
-            <div>
-                <label for="inputAge" class="ancho-label col-form-label">Edad:</label>
-              </div>
-            <div class="col-sm-9">
-              <input type="number" class="form-control" id="inputAge" name="age" [(ngModel)]="age" required>
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <div>
-                <label for="birthDate" class="ancho-label col-form-label">Fecha de Nacimiento:</label>
-              </div>
-            <div class="col-sm-9">
-              <input type="date" class="form-control" id="birthDate"  name="birthDate" [(ngModel)]="birthDate" required>
-            </div>
-          </div>
-          
-        <div class="d-flex justify-content-center margin-top-low">
-          <button class="width  btn  btn-lg btn-danger justify-content-center" (click)="sendData()" >Enviar</button>
-        </div>
-      </div>
+    </div>
   </div>
 
-
-  <span>{{name}} {{lastName}} {{birhDate}} {{age}}</span>
+  <div class="d-flex">
+    <button class="btn btn-lg btn-danger interspace" (click)="sendData()">Enviar</button>
+  </div>
+</div>
