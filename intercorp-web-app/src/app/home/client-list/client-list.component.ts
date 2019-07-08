@@ -9,12 +9,12 @@ import { FirestoreService } from '../../services/firestore/firestore.service';
 export class ClientListComponent implements OnInit {
 
   constructor(private firestoreService: FirestoreService) { }
-  clients = [];
+  clientsAnalyic = [];
   ngOnInit() {
     this.firestoreService.getClients().subscribe((docSnapshot) => {
-      this.clients = [];
+      this.clientsAnalyic = [];
       docSnapshot.forEach((catData: any) => {
-        this.clients.push({
+        this.clientsAnalyic.push({
           id: catData.payload.doc.id,
           data: catData.payload.doc.data()
         });
@@ -22,17 +22,17 @@ export class ClientListComponent implements OnInit {
     });
   }
   getMedia(){
-    return(this.clients.reduce((total ,client) => total + client.data.age, 0))/this.clients.length;
+    return parseFloat(((this.clientsAnalyic.reduce((total ,client) => total + client.data.age, 0))
+    /this.clientsAnalyic.length).toFixed(2));
   }
-
   getStandardDesv(){
     //Media of a clients age
     const media = this.getMedia();
     //obtaining the power of 2 of the absolute value of difference bewtween age and media
-    const arrayDifference = this.clients.map(client => Math.pow(Math.abs(client.data.age - media), 2));
+    const arrayDifference = this.clientsAnalyic.map(client => Math.pow(Math.abs(client.data.age - media), 2));
     //getting sum of all values and divide into the number of clients
-    const sumDiff = (arrayDifference.reduce((total, resultA) => total + resultA, 0))/this.clients.length;
+    const sumDiff = (arrayDifference.reduce((total, resultA) => total + resultA, 0))/this.clientsAnalyic.length;
     //return square root of sum
-    return  Math.sqrt(sumDiff).toFixed(2);
+    return  parseFloat(Math.sqrt(sumDiff).toFixed(2));
   }
 }

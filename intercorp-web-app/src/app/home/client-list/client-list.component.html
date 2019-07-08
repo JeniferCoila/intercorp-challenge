@@ -1,27 +1,17 @@
-<p>{{getMedia()}}</p>
-<p>{{getStandardDesv()}}</p>
-
-<table class="table table-striped">
+<div class="d-flex justify-content-center">
+<table class="table table-striped w-25">
   <thead>
   <tr>
-    <th scope="col">#</th>
-    <th scope="col">Nombre</th>
-    <th scope="col">Apellido</th>
-    <th scope="col">Edad</th>
-    <th scope="col">Fecha de Nacimiento</th>
-
+    <th scope="col">Promedio de Edad</th>
+    <th scope="col">Desviación estándar</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let client of clients; index as i">
-    <th scope="row">{{ i + 1 }}</th>
-    <td>
-      {{ client.data.name }}
-    </td>
-    <td>{{ client.data.lastName}}</td>
-    <td>{{ client.data.age}}</td>
-    <td>{{ client.data.birthDate}}</td>
+  <tr>
+    <td>{{getMedia()}}</td>
+    <td>{{getStandardDesv()}}</td>
 
   </tr>
   </tbody>
 </table>
+</div>

@@ -1,12 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { AngularFireModule,  } from '@angular/fire';
+import { AngularFireModule, } from '@angular/fire';
 import { environment } from '../environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFirestore } from '@angular/fire/firestore';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatExpansionModule} from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,8 +36,10 @@ import { AnalyticsComponent } from './home/analytics/analytics.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     ReactiveFormsModule,
     AngularFirestoreModule.enablePersistence(),
-    AngularFireDatabaseModule
-    ],
+    AngularFireDatabaseModule,
+    BrowserAnimationsModule,
+    MatExpansionModule
+  ],
   providers: [
   ],
   bootstrap: [AppComponent]

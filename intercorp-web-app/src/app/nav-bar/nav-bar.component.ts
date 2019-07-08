@@ -6,6 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.css']
 })
 export class NavBarComponent implements OnInit {
+  navTabs = {
+    formTab: true,
+    listTab: false,
+    analyticsTab: false
+  }
 
   constructor() { }
 

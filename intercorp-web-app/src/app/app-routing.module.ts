@@ -9,7 +9,7 @@ import { AnalyticsComponent } from './home/analytics/analytics.component';
 const routes: Routes = [
   { path: '', component: HomeComponent,
     children:[
-      {path: 'form', component: FormComponent},
+      {path: '', component: FormComponent},
       {path: 'list', component: ClientListComponent},
       {path: 'analytics', component:AnalyticsComponent}
     ]
